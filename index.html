@@ -1,144 +1,175 @@
+
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta charset="utf-8" />
-  <style>
-    .introduction {
-    display: flex;
-    flex-direction: column;
-    width: 480px;
-    height: 802px;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding: var(--spacing-spacing-8);
-    position: relative;
-    border-radius: var(--radius-round-6);
-    overflow: hidden;
-    background-image: url(./introduction.png);
-    background-size: cover;
-    background-position: 50% 50%;
-}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
 
-.introduction .BG {
-    width: 480px;
-    height: 976px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: var(--colors-background-brand-orange-100);
-    opacity: 0.5;
-}
+      :root {
+        --spacing-spacing-8: 40px;
+        --radius-round-6: 32px;
+        --colors-text-white-100: rgba(255, 255, 255, 1);
+        --colors-background-brand-orange-100: rgba(255, 86, 52, 1);
+        /* Logo customization variables */
+        --logo-height: 38.97px;
+        --logo-width: auto;
+        --logo-x-position: 0px; /* Controls position on x-axis (positive moves right, negative moves left) */
+        --logo-y-position: 0px; /* Controls position on y-axis (positive moves down, negative moves up) */
+        --logo-align: flex-start; /* Default left alignment */
+      }
 
-.introduction .div {
-    width: 480px;
-    height: 460px;
-    position: absolute;
-    top: 516px;
-    left: 0;
-    background: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 1) 50%,
-        rgba(0, 0, 0, 1) 100%
-    );
-    opacity: 0.5;
-}
+      * {
+        -webkit-font-smoothing: antialiased;
+        box-sizing: border-box;
+      }
 
-.introduction .logo {
-    position: relative;
-    width: 168px;
-    height: 58.86px;
-    margin-top: -460px;
-}
+      html,
+      body {
+        margin: 0px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(to bottom, #FEF4F2, #FFEAE6);
+      }
 
-.introduction .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-    position: relative;
-    align-self: stretch;
-    width: 100%;
-    flex: 0 0 auto;
-    margin-top: -460px;
-}
+      button:focus-visible {
+        outline: 2px solid #4a90e2 !important;
+        outline: -webkit-focus-ring-color auto 5px !important;
+      }
 
-.introduction .big-title {
-    position: relative;
-    align-self: stretch;
-    margin-top: -1.00px;
-    font-family: var(--bigtypo-desktop-font-family);
-    font-weight: var(--bigtypo-desktop-font-weight);
-    color: var(--colors-text-white-100);
-    font-size: var(--bigtypo-desktop-font-size);
-    letter-spacing: var(--bigtypo-desktop-letter-spacing);
-    line-height: var(--bigtypo-desktop-line-height);
-    font-style: var(--bigtypo-desktop-font-style);
-}
+      a {
+        text-decoration: none;
+      }
 
-.introduction .description {
-    position: relative;
-    align-self: stretch;
-    font-family: var(--body-normal-font-family);
-    font-weight: var(--body-normal-font-weight);
-    color: var(--colors-text-white-100);
-    font-size: var(--body-normal-font-size);
-    letter-spacing: var(--body-normal-letter-spacing);
-    line-height: var(--body-normal-line-height);
-    font-style: var(--body-normal-font-style);
-}
+      .introduction {
+        display: flex;
+        flex-direction: column;
+        width: 480px;
+        height: 802px;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: var(--spacing-spacing-8);
+        position: relative;
+        border-radius: var(--radius-round-6);
+        overflow: hidden;
+        background-image: url(https://day5-phi.vercel.app/introduction.png);
+        background-size: cover;
+        background-position: center;
+      }
 
-    :root {
-    /* Typography - Big Title */
-    --bigtypo-desktop-font-family: "DM Sans", Helvetica;
-    --bigtypo-desktop-font-weight: 700;
-    --bigtypo-desktop-font-size: 64px;
-    --bigtypo-desktop-letter-spacing: -1.92px;
-    --bigtypo-desktop-line-height: 56px;
-    --bigtypo-desktop-font-style: normal;
+      .introduction .BG {
+        height: 976px;
+        top: 0;
+        background-color: var(--colors-background-brand-orange-100);
+        position: absolute;
+        width: 480px;
+        left: 0;
+        opacity: 0.5;
+        z-index: 1;
+      }
 
-    /* Typography - Body */
-    --body-normal-font-family: "DM Sans", Helvetica;
-    --body-normal-font-weight: 400;
-    --body-normal-font-size: 16px;
-    --body-normal-letter-spacing: -0.16px;
-    --body-normal-line-height: 20px;
-    --body-normal-font-style: normal;
+      .introduction .div {
+        height: 460px;
+        top: 516px;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(0, 0, 0, 1) 50%,
+          rgba(0, 0, 0, 1) 100%
+        );
+        position: absolute;
+        width: 480px;
+        left: 0;
+        opacity: 0.5;
+        z-index: 2;
+      }
 
-    /* Spacing and Radius */
-    --spacing-spacing-8: 40px;
-    --radius-round-6: 32px;
+      .introduction .logo {
+        height: var(--logo-height);
+        width: var(--logo-width);
+        position: relative;
+        z-index: 3;
+        transform: translateX(var(--logo-x-position)) translateY(var(--logo-y-position)); /* Moves logo on both axes */
+        align-self: var(--logo-align); /* Maintains left/right alignment */
+      }
 
-    /* Colors */
-    --colors-text-white-100: rgba(255, 255, 255, 1);
-    --colors-background-brand-orange-100: rgba(255, 86, 52, 1);
-}
-[data-colors-mode="dark-mode"] {
-    --colors-text-white-100: rgba(34, 34, 34, 1);
-}
+      .introduction .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        position: relative;
+        align-self: stretch;
+        width: 100%;
+        flex: 0 0 auto;
+        margin-top: -460px;
+        z-index: 3;
+      }
 
-[data-colors-mode="light-mode"] {
-    --colors-text-white-100: rgba(255, 255, 255, 1);
-}
+      .introduction .big-title {
+        position: relative;
+        align-self: stretch;
+        margin-top: -1.00px;
+        font-family: "DM Sans", sans-serif;
+        font-weight: 700;
+        color: var(--colors-text-white-100);
+        font-size: 58px;
+        letter-spacing: -1.92px;
+        line-height: 56px;
+      }
 
-  
-  </style>
+      .introduction .description {
+        position: relative;
+        align-self: stretch;
+        font-family: "DM Sans", sans-serif;
+        font-weight: 400;
+        color: var(--colors-text-white-100);
+        font-size: 16px;
+        letter-spacing: -0.16px;
+        line-height: 20px;
+      }
 
+      [data-colors-mode="dark-mode"] {
+        --colors-text-white-100: rgba(34, 34, 34, 1);
+      }
 
-</head>
-<body data-colors-mode="light-mode">
+      [data-colors-mode="light-mode"] {
+        --colors-text-white-100: rgba(255, 255, 255, 1);
+      }
+    </style>
+  </head>
+  <body>
     <div class="introduction">
-        <div class="BG"></div>
-        <div class="div"></div>
-        <img class="logo" src="type-4.svg" />
-        <div class="content">
-            <div class="big-title">Service Panel</div>
-            <p class="description">
-                Streamline your restaurant operations with BMS. 
-                Manage reservations, orders, inventory, and staff effortlessly, 
-                and focus on delivering exceptional dining experiences.
-            </p>
-        </div>
+      <div class="BG"></div>
+      <div class="div"></div>
+      <img src="./Type4.svg" alt="Logo" class="logo">
+      <div class="content">
+        <div class="big-title">Service Panel</div>
+        <p class="description">
+          Streamline your restaurant operations with BMS. Manage reservations, orders, inventory, and staff
+          effortlessly, and focus on delivering exceptional dining experiences.
+        </p>
+      </div>
     </div>
-</body>
+
+    <!-- Customization block for logo positioning -->
+    <style>
+      :root {
+        /* Default: Logo on left with ability to adjust both axes */
+        --logo-align: flex-start; /* Left alignment */
+        --logo-x-position: 12px;   /* Change this to move logo on x-axis (right/left) */
+        --logo-y-position: 10px;   /* Change this to move logo on y-axis (up/down) */
+                                  /* X: Positive moves right, negative moves left */
+                                  /* Y: Positive moves down, negative moves up */
+        
+        /* Optional: Adjust size if needed */
+        --logo-height: 38px;
+        --logo-width: 150px; /* or 'auto' */
+      }
+    </style>
+  </body>
 </html>
