@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+  <style>
+    .introduction {
+    display: flex;
+    flex-direction: column;
+    width: 480px;
+    height: 802px;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: var(--spacing-spacing-8);
+    position: relative;
+    border-radius: var(--radius-round-6);
+    overflow: hidden;
+    background-image: url(introduction.png);
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.introduction .BG {
+    width: 480px;
+    height: 976px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--colors-background-brand-orange-100);
+    opacity: 0.5;
+}
+
+.introduction .div {
+    width: 480px;
+    height: 460px;
+    position: absolute;
+    top: 516px;
+    left: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 1) 50%,
+        rgba(0, 0, 0, 1) 100%
+    );
+    opacity: 0.5;
+}
+
+.introduction .logo {
+    position: relative;
+    width: 168px;
+    height: 58.86px;
+    margin-top: -460px;
+}
+
+.introduction .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+    margin-top: -460px;
+}
+
+.introduction .big-title {
+    position: relative;
+    align-self: stretch;
+    margin-top: -1.00px;
+    font-family: var(--bigtypo-desktop-font-family);
+    font-weight: var(--bigtypo-desktop-font-weight);
+    color: var(--colors-text-white-100);
+    font-size: var(--bigtypo-desktop-font-size);
+    letter-spacing: var(--bigtypo-desktop-letter-spacing);
+    line-height: var(--bigtypo-desktop-line-height);
+    font-style: var(--bigtypo-desktop-font-style);
+}
+
+.introduction .description {
+    position: relative;
+    align-self: stretch;
+    font-family: var(--body-normal-font-family);
+    font-weight: var(--body-normal-font-weight);
+    color: var(--colors-text-white-100);
+    font-size: var(--body-normal-font-size);
+    letter-spacing: var(--body-normal-letter-spacing);
+    line-height: var(--body-normal-line-height);
+    font-style: var(--body-normal-font-style);
+}
+
+    :root {
+    /* Typography - Big Title */
+    --bigtypo-desktop-font-family: "DM Sans", Helvetica;
+    --bigtypo-desktop-font-weight: 700;
+    --bigtypo-desktop-font-size: 64px;
+    --bigtypo-desktop-letter-spacing: -1.92px;
+    --bigtypo-desktop-line-height: 56px;
+    --bigtypo-desktop-font-style: normal;
+
+    /* Typography - Body */
+    --body-normal-font-family: "DM Sans", Helvetica;
+    --body-normal-font-weight: 400;
+    --body-normal-font-size: 16px;
+    --body-normal-letter-spacing: -0.16px;
+    --body-normal-line-height: 20px;
+    --body-normal-font-style: normal;
+
+    /* Spacing and Radius */
+    --spacing-spacing-8: 40px;
+    --radius-round-6: 32px;
+
+    /* Colors */
+    --colors-text-white-100: rgba(255, 255, 255, 1);
+    --colors-background-brand-orange-100: rgba(255, 86, 52, 1);
+}
+[data-colors-mode="dark-mode"] {
+    --colors-text-white-100: rgba(34, 34, 34, 1);
+}
+
+[data-colors-mode="light-mode"] {
+    --colors-text-white-100: rgba(255, 255, 255, 1);
+}
+
+  
+  </style>
+
+
+</head>
+<body>
+    <div class="introduction">
+        <div class="BG"></div>
+        <div class="div"></div>
+        <img class="logo" src="type-4.svg" />
+        <div class="content">
+            <div class="big-title">Service Panel</div>
+            <p class="description">
+                Streamline your restaurant operations with BMS. 
+                Manage reservations, orders, inventory, and staff effortlessly, 
+                and focus on delivering exceptional dining experiences.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
