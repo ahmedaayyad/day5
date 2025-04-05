@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+  <style>
+    :root {
+    /* Typography - Big Title */
+    --bigtypo-desktop-font-family: "DM Sans", Helvetica;
+    --bigtypo-desktop-font-weight: 700;
+    --bigtypo-desktop-font-size: 64px;
+    --bigtypo-desktop-letter-spacing: -1.92px;
+    --bigtypo-desktop-line-height: 56px;
+    --bigtypo-desktop-font-style: normal;
+
+    /* Typography - Body */
+    --body-normal-font-family: "DM Sans", Helvetica;
+    --body-normal-font-weight: 400;
+    --body-normal-font-size: 16px;
+    --body-normal-letter-spacing: -0.16px;
+    --body-normal-line-height: 20px;
+    --body-normal-font-style: normal;
+
+    /* Typography - Title 1 */
+    --title-1-desktop-font-family: "DM Sans", Helvetica;
+    --title-1-desktop-font-weight: 700;
+    --title-1-desktop-font-size: 32px;
+    --title-1-desktop-letter-spacing: -0.96px;
+    --title-1-desktop-line-height: 40px;
+    --title-1-desktop-font-style: normal;
+
+    /* Typography - Caption */
+    --caption-bold-font-family: "DM Sans", Helvetica;
+    --caption-bold-font-weight: 700;
+    --caption-bold-font-size: 13px;
+    --caption-bold-letter-spacing: 0px;
+    --caption-bold-line-height: 16px;
+    --caption-bold-font-style: normal;
+
+    /* Typography - Link */
+    --body-link-bold-font-family: "DM Sans", Helvetica;
+    --body-link-bold-font-weight: 500;
+    --body-link-bold-font-size: 16px;
+    --body-link-bold-letter-spacing: -0.16px;
+    --body-link-bold-line-height: 20px;
+    --body-link-bold-font-style: normal;
+
+    /* Typography - Button */
+    --button-large-font-family: "DM Sans", Helvetica;
+    --button-large-font-weight: 700;
+    --button-large-font-size: 16px;
+    --button-large-letter-spacing: -0.16px;
+    --button-large-line-height: 24px;
+    --button-large-font-style: normal;
+
+    /* Spacing */
+    --spacing-0: 0px;
+    --spacing-spacing-0: 0px;
+    --spacing-spacing-0-duplicate: 0px;
+    --spacing-spacing-1: 4px;
+    --spacing-spacing-2: 8px;
+    --spacing-spacing-2-duplicate: 8px;
+    --spacing-spacing-4: 16px;
+    --spacing-spacing-6: 24px;
+    --spacing-spacing-8: 40px;
+
+    /* Radius */
+    --radius-round-6: 32px;
+
+    /* Colors */
+    --colors-text-white-100: rgba(255, 255, 255, 1);
+    --colors-text-white-100-duplicate: rgba(255, 255, 255, 1);
+    --colors-text-black-100: rgba(0, 0, 0, 1);
+    --colors-text-black-60: rgba(0, 0, 0, 0.6);
+    --colors-background-brand-orange-100: rgba(255, 86, 52, 1);
+    --colors-background-black-100: rgba(0, 0, 0, 1);
+    --colors-background-black-10: rgba(0, 0, 0, 0.1);
+    --colors-background-white-60: rgba(255, 255, 255, 0.6);
+    --colors-border-black-10: rgba(0, 0, 0, 0.1);
+}
+
+/* Theme Definitions */
+/* To enable a theme in your HTML, simply add one of the following data attributes to an HTML element, like so:
+   <body data-colors-mode="dark-mode"> <!-- the rest of your content --> </body>
+   You can apply the theme on any DOM node, not just the `body`
+*/
+
+[data-colors-mode="dark-mode"] {
+    --colors-text-white-100: rgba(34, 34, 34, 1);
+    --colors-text-black-100: rgba(238, 238, 238, 1);
+    --colors-text-black-60: rgba(238, 238, 238, 0.6);
+    --colors-background-black-10: rgba(221, 221, 221, 0.1);
+    --colors-background-white-60: rgba(17, 17, 17, 0.6);
+    --colors-border-black-10: rgba(221, 221, 221, 0.1);
+}
+
+[data-colors-mode="light-mode"] {
+    --colors-text-white-100: rgba(255, 255, 255, 1);
+    --colors-text-black-100: rgba(0, 0, 0, 1);
+    --colors-text-black-60: rgba(0, 0, 0, 0.6);
+    --colors-background-black-10: rgba(0, 0, 0, 0.1);
+    --colors-background-white-60: rgba(255, 255, 255, 0.6);
+    --colors-border-black-10: rgba(0, 0, 0, 0.1);
+}
+
+    .sign-in {
+    display: flex;
+    width: 1194px;
+    align-items: center;
+    position: relative;
+    background-color: rgba(255, 255, 255, 1.0);
+    background: linear-gradient(
+        68deg,
+        rgba(255, 255, 255, 1) 15%,
+        rgba(255, 235, 231, 1) 74%
+    );
+    gap: var(--spacing-spacing-0);
+}
+
+.sign-in .frame {
+    display: flex;
+    width: 496px;
+    height: 834px;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    position: relative;
+}
+
+.sign-in .introduction {
+    display: flex;
+    flex-direction: column;
+    width: 480px;
+    height: 802px;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: var(--spacing-spacing-8);
+    position: relative;
+    border-radius: var(--radius-round-6);
+    overflow: hidden;
+    background-image: url('introduction.png');
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.sign-in .BG {
+    position: absolute;
+    width: 480px;
+    height: 976px;
+    top: 0;
+    left: 0;
+    background-color: var(--colors-background-brand-orange-100);
+    opacity: 0.5;
+}
+
+.sign-in .div {
+    position: absolute;
+    width: 480px;
+    height: 460px;
+    top: 516px;
+    left: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 1) 50%,
+        rgba(0, 0, 0, 1) 100%
+    );
+    opacity: 0.5;
+}
+
+.sign-in .logo {
+    position: relative;
+    width: 168px;
+    height: 58.86px;
+    margin-top: -460px;
+}
+
+.sign-in .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+    margin-top: -460px;
+}
+
+.sign-in .big-title {
+    position: relative;
+    align-self: stretch;
+    margin-top: -1.00px;
+    font-family: var(--bigtypo-desktop-font-family);
+    font-weight: var(--bigtypo-desktop-font-weight);
+    font-size: var(--bigtypo-desktop-font-size);
+    letter-spacing: var(--bigtypo-desktop-letter-spacing);
+    line-height: var(--bigtypo-desktop-line-height);
+    font-style: var(--bigtypo-desktop-font-style);
+    color: var(--colors-text-white-100);
+}
+
+.sign-in .description {
+    position: relative;
+    align-self: stretch;
+    font-family: var(--body-normal-font-family);
+    font-weight: var(--body-normal-font-weight);
+    font-size: var(--body-normal-font-size);
+    letter-spacing: var(--body-normal-letter-spacing);
+    line-height: var(--body-normal-line-height);
+    font-style: var(--body-normal-font-style);
+    color: var(--colors-text-white-100);
+}
+
+.sign-in .sign-up-form-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 834px;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 10px;
+    padding: 267px 169px;
+    position: relative;
+    flex: 1;
+    flex-grow: 1;
+}
+
+.sign-in .sign-up-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-spacing-4);
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+    margin-top: -44.00px;
+    margin-bottom: -44.00px;
+}
+
+.sign-in .heading-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-spacing-6);
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.sign-in .heading {
+    display: flex;
+    flex-direction: column;
+    width: 360px;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.sign-in .headline {
+    position: relative;
+    align-self: stretch;
+    margin-top: -1.00px;
+    font-family: var(--title-1-desktop-font-family);
+    font-weight: var(--title-1-desktop-font-weight);
+    font-size: var(--title-1-desktop-font-size);
+    letter-spacing: var(--title-1-desktop-letter-spacing);
+    line-height: var(--title-1-desktop-line-height);
+    font-style: var(--title-1-desktop-font-style);
+    color: var(--colors-text-black-100);
+    text-align: center;
+}
+
+.sign-in .text-wrapper {
+    position: relative;
+    align-self: stretch;
+    font-family: var(--body-normal-font-family);
+    font-weight: var(--body-normal-font-weight);
+    font-size: var(--body-normal-font-size);
+    letter-spacing: var(--body-normal-letter-spacing);
+    line-height: var(--body-normal-line-height);
+    font-style: var(--body-normal-font-style);
+    color: var(--colors-text-black-60);
+    text-align: center;
+}
+
+.sign-in .frame-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-spacing-4);
+    padding: 0px 0px var(--spacing-spacing-4) 0px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.sign-in .standard-input {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-spacing-2-duplicate);
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.sign-in .input-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 0px 16px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.sign-in .label {
+    position: relative;
+    flex: 1;
+    margin-top: -1.00px;
+    font-family: var(--caption-bold-font-family);
+    font-weight: var(--caption-bold-font-weight);
+    font-size: var(--caption-bold-font-size);
+    letter-spacing: var(--caption-bold-letter-spacing);
+    line-height: var(--caption-bold-line-height);
+    font-style: var(--caption-bold-font-style);
+    color: var(--colors-text-black-60);
+}
+
+.sign-in .inputs-text-field {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-spacing-1);
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+    margin-bottom: -1.00px;
+    margin-left: -1.00px;
+    margin-right: -1.00px;
+    background-color: var(--colors-background-white-60);
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid var(--colors-border-black-10);
+}
+
+.sign-in .input-content {
+    display: flex;
+    flex-direction: column;
+    height: 48px;
+    align-items: flex-start;
+    justify-content: center;
+    gap: var(--spacing-0);
+    padding: 0px 16px;
+    position: relative;
+    flex: 1;
+    flex-grow: 1;
+}
+
+.sign-in .value {
+    position: relative;
+    align-self: stretch;
+    font-family: var(--body-normal-font-family);
+    font-weight: var(--body-normal-font-weight);
+    font-size: var(--body-normal-font-size);
+    letter-spacing: var(--body-normal-letter-spacing);
+    line-height: var(--body-normal-line-height);
+    font-style: var(--body-normal-font-style);
+    color: var(--colors-text-black-100);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.sign-in .input-content-2 {
+    display: flex;
+    height: 48px;
+    align-items: center;
+    gap: var(--spacing-spacing-1);
+    padding: 0px 16px;
+    position: relative;
+    flex: 1;
+    flex-grow: 1;
+}
+
+.sign-in .value-2 {
+    position: relative;
+    flex: 1;
+    font-family: var(--body-normal-font-family);
+    font-weight: var(--body-normal-font-weight);
+    font-size: var(--body-normal-font-size);
+    letter-spacing: var(--body-normal-letter-spacing);
+    line-height: var(--body-normal-line-height);
+    font-style: var(--body-normal-font-style);
+    color: var(--colors-text-black-100);
+    overflow: hidden;
+
+
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.sign-in .icon {
+    position: relative;
+    width: 24px;
+    height: 24px;
+}
+
+.sign-in .frame-3 {
+    display: inline-flex;
+    align-items: center;
+    gap: 33px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.sign-in .checkbox-item {
+    display: flex;
+    width: 208px;
+    align-items: center;
+    gap: var(--spacing-spacing-2);
+    position: relative;
+}
+
+.sign-in .checkbox-symbol {
+    display: flex;
+    width: 28px;
+    height: 28px;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    position: relative;
+    background-color: var(--colors-background-black-10);
+    border-radius: 8px;
+}
+
+.sign-in .element-check {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    margin-top: -23852.00px;
+    margin-left: -9006.00px;
+}
+
+.sign-in .text {
+    position: relative;
+    flex: 1;
+    font-family: var(--body-normal-font-family);
+    font-weight: var(--body-normal-font-weight);
+    font-size: var(--body-normal-font-size);
+    letter-spacing: var(--body-normal-letter-spacing);
+    line-height: var(--body-normal-line-height);
+    font-style: var(--body-normal-font-style);
+    color: var(--colors-text-black-100);
+}
+
+.sign-in .simple-BTN {
+    display: inline-flex;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.sign-in .simple-button {
+    position: relative;
+    width: fit-content;
+    font-family: var(--body-link-bold-font-family);
+    font-weight: var(--body-link-bold-font-weight);
+    font-size: var(--body-link-bold-font-size);
+    letter-spacing: var(--body-link-bold-letter-spacing);
+    line-height: var(--body-link-bold-line-height);
+    font-style: var(--body-link-bold-font-style);
+    color: var(--colors-text-black-100);
+    text-decoration: underline;
+    white-space: nowrap;
+}
+
+.sign-in .medium-button {
+    display: flex;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 0px 32px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    background-color: var(--colors-background-black-100);
+    border-radius: 32px;
+}
+
+.sign-in .text-button {
+    position: relative;
+    width: fit-content;
+    font-family: var(--button-large-font-family);
+    font-weight: var(--button-large-font-weight);
+    font-size: var(--button-large-font-size);
+    letter-spacing: var(--button-large-letter-spacing);
+    line-height: var(--button-large-line-height);
+    font-style: var(--button-large-font-style);
+    color: var(--colors-text-white-100-duplicate);
+    white-space: nowrap;
+}
+
+
+
+
+    
+  </style>
+</head>
+<body>
+    <div class="sign-in">
+        <div class="frame">
+            <div class="introduction">
+                <div class="BG"></div>
+                <div class="div"></div>
+                <img class="logo" src="type-4.svg" />
+                <div class="content">
+                    <div class="big-title">Service Panel</div>
+                    <p class="description">
+                        Streamline your restaurant operations with BMS. 
+                        Manage reservations, orders, inventory, and staff effortlessly, 
+                        and focus on delivering exceptional dining experiences.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="sign-up-form-wrapper">
+            <div class="sign-up-form">
+                <div class="heading-wrapper">
+                    <div class="heading">
+                        <div class="headline">Welcome Back</div>
+                        <p class="text-wrapper">Manage, streamline, and thrive effortlessly.</p>
+                    </div>
+                </div>
+                
+                <div class="frame-2">
+                    <div class="standard-input">
+                        <div class="input-label">
+                            <div class="label">Email</div>
+                        </div>
+                        <div class="inputs-text-field">
+                            <div class="input-content">
+                                <div class="value">samsmith@gmail.com</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="standard-input">
+                        <div class="input-label">
+                            <div class="label">Password</div>
+                        </div>
+                        <div class="inputs-text-field">
+                            <div class="input-content-2">
+                                <div class="value-2">••••••••</div>
+                                <img class="icon" src="icon.svg" />
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="frame-3">
+                        <div class="checkbox-item">
+                            <div class="checkbox-symbol">
+                                <img class="element-check" src="check.png" />
+                            </div>
+                            <div class="text">Remember me</div>
+                        </div>
+                        <div class="simple-BTN">
+                            <div class="simple-button">Login with Code</div>
+                        </div>
+                    </div>
+                    
+                    <div class="medium-button">
+                        <div class="text-button">Sign In</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
