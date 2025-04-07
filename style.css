@@ -53,7 +53,8 @@
     position: relative;
     width: 168px;
     height: 58.86px;
-    margin-top: -460px;
+    margin-top: -460; /* Remove the negative margin and adjust as needed */
+    z-index: 10; /* Ensure it’s above other elements */
 }
 
 .frame .content {
