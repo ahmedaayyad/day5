@@ -19,7 +19,7 @@
     position: relative;
     border-radius: var(--radius-round-6);
     overflow: hidden;
-    background-image: url(./img/introduction.png);
+    background-image: url('introduction.png');
     background-size: cover;
     background-position: 50% 50%;
 }
