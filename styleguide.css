@@ -1,0 +1,40 @@
+:root {
+    /* Typography */
+    --bigtypo-desktop-font-family: "DM Sans", Helvetica;
+    --bigtypo-desktop-font-weight: 700;
+    --bigtypo-desktop-font-size: 64px;
+    --bigtypo-desktop-letter-spacing: -1.92px;
+    --bigtypo-desktop-line-height: 56px;
+    --bigtypo-desktop-font-style: normal;
+
+    --body-normal-font-family: "DM Sans", Helvetica;
+    --body-normal-font-weight: 400;
+    --body-normal-font-size: 16px;
+    --body-normal-letter-spacing: -0.16px;
+    --body-normal-line-height: 20px;
+    --body-normal-font-style: normal;
+
+    /* Colors */
+    --colors-text-white-100: rgba(255, 255, 255, 1);
+    --colors-background-brand-orange-100: rgba(255, 86, 52, 1);
+
+    /* Spacing */
+    --spacing-spacing-8: 40px;
+
+    /* Radius */
+    --radius-round-6: 32px;
+}
+
+/* Theme configurations */
+/* To enable a theme in your HTML, simply add one of the following data attributes to an HTML element, like so:
+   <body data-colors-mode="dark-mode"> <!-- the rest of your content --> </body>
+   You can apply the theme on any DOM node, not just the `body`
+*/
+
+[data-colors-mode="dark-mode"] {
+    --colors-text-white-100: rgba(34, 34, 34, 1);
+}
+
+[data-colors-mode="light-mode"] {
+    --colors-text-white-100: rgba(255, 255, 255, 1);
+}
