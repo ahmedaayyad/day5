@@ -80,6 +80,9 @@
     letter-spacing: var(--bigtypo-desktop-letter-spacing);
     line-height: var(--bigtypo-desktop-line-height);
     font-style: var(--bigtypo-desktop-font-style);
+    width: 400px;
+    height: 56px;
+
 }
 
 .frame .description {
