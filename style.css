@@ -1,0 +1,94 @@
+.frame {
+    display: flex;
+    width: 496px;
+    height: 834px;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    position: relative;
+}
+
+.frame .introduction {
+    display: flex;
+    flex-direction: column;
+    width: 480px;
+    height: 802px;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: var(--spacing-spacing-8);
+    position: relative;
+    border-radius: var(--radius-round-6);
+    overflow: hidden;
+    background-image: url(./img/introduction.png);
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.frame .BG {
+    position: absolute;
+    width: 480px;
+    height: 976px;
+    top: 0;
+    left: 0;
+    background-color: var(--colors-background-brand-orange-100);
+    opacity: 0.5;
+}
+
+.frame .div {
+    position: absolute;
+    width: 480px;
+    height: 460px;
+    top: 516px;
+    left: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 1) 50%,
+        rgba(0, 0, 0, 1) 100%
+    );
+    opacity: 0.5;
+}
+
+.frame .logo {
+    position: relative;
+    width: 168px;
+    height: 58.86px;
+    margin-top: -460px;
+}
+
+.frame .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+    margin-top: -460px;
+}
+
+.frame .big-title {
+    position: relative;
+    align-self: stretch;
+    margin-top: -1px;
+    font-family: var(--bigtypo-desktop-font-family);
+    font-weight: var(--bigtypo-desktop-font-weight);
+    color: var(--colors-text-white-100);
+    font-size: var(--bigtypo-desktop-font-size);
+    letter-spacing: var(--bigtypo-desktop-letter-spacing);
+    line-height: var(--bigtypo-desktop-line-height);
+    font-style: var(--bigtypo-desktop-font-style);
+}
+
+.frame .description {
+    position: relative;
+    align-self: stretch;
+    font-family: var(--body-normal-font-family);
+    font-weight: var(--body-normal-font-weight);
+    color: var(--colors-text-white-100);
+    font-size: var(--body-normal-font-size);
+    letter-spacing: var(--body-normal-letter-spacing);
+    line-height: var(--body-normal-line-height);
+    font-style: var(--body-normal-font-style);
+}
