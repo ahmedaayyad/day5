@@ -73,12 +73,12 @@
     position: relative;
     align-self: stretch;
     margin-top: -1px;
-    font-family: var(--bigtypo-desktop-font-family);
-    font-weight: var(--bigtypo-desktop-font-weight);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
     color: var(--colors-text-white-100);
-    font-size: var(--bigtypo-desktop-font-size);
-    letter-spacing: var(--bigtypo-desktop-letter-spacing);
-    line-height: var(--bigtypo-desktop-line-height);
+    font-size: 64px;
+    letter-spacing: -0.03em;
+    line-height: 56px;
     font-style: var(--bigtypo-desktop-font-style);
 }
 
